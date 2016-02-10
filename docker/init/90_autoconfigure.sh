@@ -8,8 +8,11 @@ if [ -r "$TEMPEST_CONFIG" ] && [ -z "$TEMPEST_AUTOCONFIGURE" ]; then
 else
     export TEMPEST_AUTOCONFIGURE=${TEMPEST_AUTOCONFIGURE:-true}
 fi
+if [ "$TEMPEST_AUTOCONFIGURE" != "true" ]; then
+    echo "> Autoconfiguration disabled"
+fi
 # Check if there are OS_AUTH env variables for autoconfiguration
-if [ "$TEMPEST_AUTOCONFIGURE" != "true" ] || [ -z "$OS_AUTH_URL" ] || [ -z "$OS_USERNAME" ] || [ -z "$OS_PASSWORD" ] || [ -z "$OS_PROJECT_NAME" ]; then
+if [ -z "$OS_AUTH_URL" ] || [ -z "$OS_USERNAME" ] || [ -z "$OS_PASSWORD" ] || [ -z "$OS_PROJECT_NAME" ]; then
     echo "> Env OS_* variables not defined for autoconfiguration"
     return 1
 fi
