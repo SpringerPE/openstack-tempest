@@ -1,6 +1,6 @@
-# diamond-ontapclustercollector
+# openstack-tempest
 #
-# VERSION  0.2.0
+# VERSION  0.1.0
 #
 # Use phusion/baseimage as base image.
 # https://github.com/phusion/baseimage-docker/blob/master/Changelog.md
