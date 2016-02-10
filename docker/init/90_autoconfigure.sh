@@ -230,9 +230,8 @@ if [ -z "$TEMPEST_NOVA_ENABLED" ]; then
     fi
 fi
 if [ "$TEMPEST_NOVA_ENABLED" == "true" ] && [ -z "$TEMPEST_NOVA_EC2" ]; then
-    EC2=$(check_service "ec2")
-    if [ -n "$EC2" ]; then
-	export TEMPEST_NOVA_EC2=$EC2
+    export TEMPEST_NOVA_EC2=$(check_service "ec2")
+    if [ "$TEMPEST_NOVA_EC2" == "true" ]; then
         echo "> Enabling Nova tempest for EC2"
     fi
 fi
