@@ -56,6 +56,19 @@ Go to `docker` folder and:
    `bin\init.sh', otherwise they could run using the `my_init` system of `phusion/baseimage`
 
 
+# Known problems
+
+* Autoconfiguration is done the fist time that `tempest` folder is created, 
+after the first run the openrc file is not needed anymore. If you need to make
+changes after the first time, go to `tempest/etc` folder and change the contents
+there.
+
+* `tempest` folder creates files owner by root. Internally, within the container,
+the process runs as root and it creates all the files as root uid in `tempest`.
+From the host operating system, one cannot go into the folder because the files
+are owned by root. Workaround, use "sudo"
+
+
 ## Author
 
 José Riguera López  <jose.riguera@springer.com> 
