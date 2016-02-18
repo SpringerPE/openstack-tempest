@@ -68,11 +68,6 @@ the process runs as root and it creates all the files as root uid in `tempest`.
 From the host operating system, one cannot go into the folder because the files
 are owned by root. Workaround, use "sudo"
 
-* it seems tempest github repository does not use tags (there are tags, but too old)
-or branchs, so, when the container is built it always will get the master branch.
-I strongly recommend tag the docker images once they are created and upload to
-a registry. 
-
 * It seems tempest github repository does not use tags (there are tags, but too old) 
 or branches, so, when the container is built it always will get the master branch. 
 I recommend tagging the docker images once they are created and upload them to
