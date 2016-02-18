@@ -10,6 +10,7 @@ if [ ! -d "$TEMPEST_DIR/.testrepository" ]; then
     fi
     (
        	tempest init $TEMPEST_DIR
+        rm -f $TEMPEST_CONFIG
     )
     if [ -n "$MOVED" ]; then
 	for f in $MOVED/*; do

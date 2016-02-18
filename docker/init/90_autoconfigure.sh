@@ -10,6 +10,7 @@ else
 fi
 if [ "$TEMPEST_AUTOCONFIGURE" != "true" ]; then
     echo "> Autoconfiguration disabled"
+    return 1
 fi
 # Check if there are OS_AUTH env variables for autoconfiguration
 if [ -z "$OS_AUTH_URL" ] || [ -z "$OS_USERNAME" ] || [ -z "$OS_PASSWORD" ] || [ -z "$OS_PROJECT_NAME" ]; then
